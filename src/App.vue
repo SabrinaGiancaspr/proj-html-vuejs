@@ -6,6 +6,8 @@
   
 </template>
 
-<style scoped>
+<style lang="scss">
+@use './style/general.scss';
+@use './style/partials/variables.scss'
 
 </style>
