@@ -3,12 +3,19 @@ import AppHeader from "./components/AppHeader.vue"
 export default{
   components: {
     AppHeader
+  },
+  data(){
+    return{
+      links: ["Home", "Pages", "Courses", "Features", "Blog"],
+    }
+    
   }
 }
+ 
 </script>
 
 <template>
-    <AppHeader />
+    <AppHeader :links="links" />
 </template>
 
 <style lang="scss">
