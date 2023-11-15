@@ -27,7 +27,7 @@ export default {
         </figure>
         <ul class="nav-links">
           <li v-for="(link, index) in links" :key="index">
-            <a href="#">{{ link }}  <font-awesome-icon class="angle-down" icon="fas fa-angle-down" /></a>
+            <a href="#">{{ link }} <font-awesome-icon class="angle-down" icon="fas fa-angle-down" /></a>
           </li>
           <li class="shop">
             <a href="#">Shop
@@ -146,19 +146,20 @@ export default {
   flex-direction: column;
   gap: 25px;
 
-  .title{
+  .title {
     font-size: 40px;
     margin-top: 70px;
   }
 
-  .btn-header{
+  .btn-header {
     margin-bottom: 50px;
   }
+
   .hero-img {
     display: flex;
     position: relative;
     width: 100%;
-    
+
 
     .person-img-left {
       position: relative;
