@@ -18,7 +18,16 @@ export default {
                     { title: 'Business Administration', description: 'Learners are encouraged to study mechanism and structure of systems administration', image: '/home-6-service-image-03.png' },
                     { title: 'Web Development', description: 'Learn to start building a webpage from scratch. You decide your own pace, course and speed', image: '/home-6-service-image-04.png' }
                 ]
-            ]
+            ],
+
+            serviceList: [
+                'Select & customize courses to your preferences',
+                'Change the tutor and make arrangements',
+                'Participate in events to join others',
+                'Get the desired certificate delivered at house'
+            ],
+
+            iconList: [['fas', 'check']]
         };
     }
 }
@@ -40,8 +49,8 @@ export default {
             </div>
         </div>
         <div class="card-sections">
-    <div class="first-cards">
-        <div class="card-container" v-for="(card, cardIndex) in cardSections[0]" :key="cardIndex">
+            <div class="first-cards">
+                <div class="card-container" v-for="(card, cardIndex) in cardSections[0]" :key="cardIndex">
                     <div class="card">
                         <img :src="card.image" :alt="`Image ${cardIndex}`">
                         <h3>{{ card.title }}</h3>
@@ -51,14 +60,24 @@ export default {
                 </div>
             </div>
             <div class="second-cards" style="margin-top: 40px;">
-        <div class="card-container" v-for="(card, cardIndex) in cardSections[1]" :key="cardIndex">
+                <div class="card-container" v-for="(card, cardIndex) in cardSections[1]" :key="cardIndex">
                     <div class="card">
                         <img :src="card.image" :alt="`Image ${cardIndex}`">
                         <h3>{{ card.title }}</h3>
                         <p>{{ card.description }}</p>
-
                     </div>
                 </div>
+            </div>
+            <div class="get-started">
+                <p>TOGETHER WE CAN CREATE</p>
+                <h1>Service We <span>Can Provide</span> For My Clients.</h1>
+                <ul class="services">
+                    <li v-for="(item, index) in serviceList" :key="index">
+                      <font-awesome-icon class="check" icon="fas fa-check" />
+                      {{ item }}
+                    </li>
+                </ul>
+                <button class="btn btn-main"> Get started for free</button>
             </div>
         </div>
     </main>
@@ -121,27 +140,50 @@ export default {
 
 
     .card-sections {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    gap: 20px;
-    margin-right: 420px;
-
-    .first-cards,
-    .second-cards {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 100px;
         gap: 20px;
+        // margin-right: 420px;
+
+
+
+        .first-cards,
+        .second-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card-container {
+            border: 1px solid black;
+            width: 210px;
+            display: flex;
+            flex-direction: column;
+            height: 300px;
+        }
     }
 
-    .card-container {
-        border: 1px solid black;
-        width: 210px;
-        display: flex;
-        flex-direction: column;
-        height: 300px;
-    }
-}
+    .get-started {
+        margin: 100px 0 0 50px;
+        width: 400px;
 
+        .services {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 25px;
+
+            .check{
+                margin-right: 10px;
+                color: #20AD96;
+
+            }
+        }
+
+        .btn-main{
+            margin-top: 40px;
+        }
+    }
 }
 </style>
