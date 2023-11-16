@@ -102,6 +102,28 @@ export default {
                     date: 'May 15, 2020',
                     views: 300
                 },
+            ],
+            learning: [
+                {
+                    icon: ['far', 'flag',],
+                    title: 'Idea Discussion',
+                    description: 'Get teamed up with the specialists who work and teach coding for years at famous universities'
+                },
+                {
+                    icon: ['fas', 'gear'],
+                    title: 'Web Development',
+                    description: 'Learn to start building a webpage from scratch. You decide your own pace, cours and speed'
+                },
+                {
+                    icon: ['far', 'life-ring'],
+                    title: 'Sustem Administration',
+                    description: 'Learners are ancouraged to sudy the mechanism and structure of system administartion'
+                },
+                {
+                    icon: ['fas', 'tv'],
+                    title: 'Graphic Design',
+                    description: 'Have a passion for graphics and arts? Show your talent with confidence and self-assertiveness'
+                }
             ]
         };
     }
@@ -203,7 +225,7 @@ export default {
             </section>
         </section>
 
-        <section class="blog" id="app">
+        <section class="blog">
             <p>ENJOY READING ON MAXCOACH</p>
             <h1 class="title-blog">Latest on <span>Our Blogs</span></h1>
             <div class="row">
@@ -217,6 +239,25 @@ export default {
                     </div>
                 </div>
             </div>
+        </section>
+        <section>
+            <p>wanna</p>
+            <h1>Glad to Help you</h1>
+            <div class="learning">
+                <div class="card-lerning" v-for="learn in learning">
+                    <font-awesome-icon class="flag" :icon="learn.icon" />
+                    <div class="title-learn">{{ learn.title }}</div>
+                    <p class="description-learn">{{ learn.description }}</p>
+                </div>
+            </div>
+            <figure class="big-img">
+                <img  src="/home-6-services-image.png" alt="">
+            </figure>
+        </section>
+        <section class="start">
+            <p>Start today fro getting <span>Online Certification</span></p>
+            <h1>You can be your own guiding star with our help!</h1>
+            <button class="btn">Get started now</button>
         </section>
     </main>
 </template>
@@ -470,5 +511,33 @@ export default {
     width: 300px;
     margin-right: 30px;
 
+}
+
+
+.learning {
+    margin-top: 100px;
+    display: flex;
+    gap: 10px;
+}
+
+.flag {
+    font-size: 30px;
+}
+
+.title-learn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.big-img{
+    margin-top: 60px;
+}
+
+.start{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 </style>
