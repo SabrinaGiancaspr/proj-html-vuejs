@@ -68,11 +68,40 @@ export default {
                 },
                 {
                     image: "/stock-full-hd-05-480x298.jpg",
-                    price:"59.00",
+                    price: "59.00",
                     description: "Introduction to Javascript for Beginners",
                     lessons: 14,
                     students: 76
                 }
+            ],
+
+            companies: ['/client-logo-colored-01.png', '/client-logo-colored-02.png', '/client-logo-colored-03.png', '/client-logo-colored-04.png', '/client-logo-colored-05.png', '/client-logo-colored-06.png'],
+
+            artists: [
+                {
+                    id: 1,
+                    name: 'Artist ',
+                    image: '/artist-blog-03-480x325.jpeg',
+                    description: 'Brush Strokes Energize Trees in Paintings',
+                    date: 'May 15, 2020',
+                    views: 688
+                },
+                {
+                    id: 2,
+                    name: 'Artist',
+                    image: '/artist-blog-01-480x325.jpg',
+                    description: 'Pocket-Sized Notebooks Hold Miniature Paintings',
+                    date: 'May 15, 2020',
+                    views: 603
+                },
+                {
+                    id: 3,
+                    name: 'Artist',
+                    image: '/artist-blog-02-480x325.jpg',
+                    description: 'Connection Between Self-Portraits and Identity',
+                    date: 'May 15, 2020',
+                    views: 300
+                },
             ]
         };
     }
@@ -128,7 +157,7 @@ export default {
             </div>
         </section>
 
-        <section class="courses container">
+        <section class="courses">
             <div class="title-section">
                 <p>CHOOSE A COURSE TO GET STARTED</p>
                 <h1 class="latest-course-title">Latest Featured <span>Courses</span></h1>
@@ -149,6 +178,42 @@ export default {
                                 <p class="info">{{ course.students }} students</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-courses">View all courses <font-awesome-icon icon="fa-solid fa-arrow-right" /></button>
+        </section>
+        <section class="about-maxcoach">
+            <h1 class="title-about">Why people talk about MaxCoach?</h1>
+            <div class="card-quote">
+                <div class="img">
+                    <img class="freelancer-img" src="/testimonial-avata-02.jpg" alt="">
+                </div>
+                <div class="desc">
+                    <p class="quote">I am free to learn at my own pace, follow my own schedule and choos the subject I like.
+                        Great study portal for people like me.</p>
+                    <p class="name-freelancer">MINA HOLLAGE</p>
+                    <p class="freelancer">/Freelancer</p>
+                </div>
+            </div>
+            <section class="companies">
+                <div class="company-logo" v-for="(company, index) in companies" :key="index">
+                    <img :src="company" :alt="'Company ' + (index + 1)">
+                </div>
+            </section>
+        </section>
+
+        <section class="blog" id="app">
+            <p>ENJOY READING ON MAXCOACH</p>
+            <h1 class="title-blog">Latest on <span>Our Blogs</span></h1>
+            <div class="row">
+                <div class="card-blog" v-for="artist in artists" :key="artist.id">
+                    <img class="img-blog" :src="artist.image" :alt="artist.name">
+                    <p>{{ artist.name }}</p>
+                    <div class="description">{{ artist.description }}</div>
+                    <div class="additional-info">
+                        <p class="info">{{ artist.date }}</p>
+                        <p class="info">{{ artist.views }} views</p>
                     </div>
                 </div>
             </div>
@@ -268,9 +333,10 @@ export default {
         border: 1px solid black;
         margin-top: 60px;
         display: flex;
-        align-items: center; 
+        align-items: center;
         justify-content: center;
         flex-direction: column;
+        background-color: #F5F7FA;
 
         .card {
             display: flex;
@@ -328,6 +394,81 @@ export default {
             }
         }
 
+        .btn-courses {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
     }
+}
+
+.about-maxcoach {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.card-quote {
+    display: flex;
+    gap: 50px;
+    margin-top: 40px;
+
+
+    .freelancer-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto 10px;
+    }
+
+    .desc {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .quote {
+        font-size: 20px;
+        margin-top: 10px;
+        width: 300px;
+    }
+}
+
+.companies {
+    display: flex;
+    gap: 50px;
+    margin-top: 60px;
+    align-items: center;
+}
+
+
+.blog {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title-blog {
+        margin-bottom: 40px;
+    }
+}
+
+.card-blog {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 320px;
+}
+
+
+
+.img-blog {
+    width: 300px;
+    margin-right: 30px;
+
 }
 </style>

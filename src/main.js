@@ -8,7 +8,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
-import { faAngleDown, faCartShopping, faMagnifyingGlass, faCheck} from '@fortawesome/free-solid-svg-icons'
+import { faAngleDown, faCartShopping, faMagnifyingGlass, faCheck, faArrowRight} from '@fortawesome/free-solid-svg-icons'
 import { faUserCircle } from '@fortawesome/free-regular-svg-icons'
 
 
@@ -16,6 +16,6 @@ import { faUserCircle } from '@fortawesome/free-regular-svg-icons'
 
 
 /* add icons to the library */
-library.add(faAngleDown, faCartShopping,faUserCircle,faMagnifyingGlass, faCheck )
+library.add(faAngleDown, faCartShopping,faUserCircle,faMagnifyingGlass, faCheck, faArrowRight )
 
 createApp(App).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
