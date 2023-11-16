@@ -1,4 +1,5 @@
 <script >
+import { store } from "./store"; 
 import AppHeader from "./components/AppHeader.vue"
 import AppMain from "./components/AppMain.vue"
 export default{
@@ -9,7 +10,7 @@ export default{
   data(){
     return{
       links: ["Home", "Pages", "Courses", "Features", "Blog"],
-
+      store: store,
     }
     
   }
