@@ -152,6 +152,12 @@ export default {
 
   .btn-header {
     margin-bottom: 50px;
+
+    &:hover{
+      background-color: white;
+      color: #20AD96;
+
+    }
   }
 
   .hero-img {

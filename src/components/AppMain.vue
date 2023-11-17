@@ -317,7 +317,7 @@ export default {
         <section class="start">
             <p class="title-start">Start today fro getting <span class="font-green font-size-green">Online Certification</span></p>
             <h1 class="subtitle">You can be your own guiding star with our help!</h1>
-            <button class="btn">Get started now</button>
+            <button class="btn start-btn">Get started now</button>
         </section>
     </main>
 </template>
@@ -418,6 +418,10 @@ export default {
             padding: 10px;
             height: 352px;
         }
+        .btn-main:hover{
+            background-color: #222254;
+            color: white;
+        }
     }
 
     .get-started {
@@ -465,6 +469,12 @@ export default {
             gap: 10px;
             margin-left: 20px;
             margin-bottom: 20px;
+            padding: 20px;
+            cursor: pointer;
+
+            &:hover{
+                background-color: white;
+            }
         }
 
         .price-descript {
@@ -534,6 +544,12 @@ export default {
             gap: 10px;
             justify-content: center;
             margin-bottom: 60px;
+
+            .btn-courses:hover{
+                background-color: #222254;
+            color: white;
+
+            }
         }
     }
 
@@ -677,6 +693,7 @@ export default {
         flex-direction: column;
         align-items: center;
         gap: 20px;
+        padding-bottom: 60px;
 
         .title-start{
             font-weight: bold;
@@ -685,6 +702,11 @@ export default {
 
         .subtitle{
             font-size: 30px;
+        }
+
+        .start-btn:hover{
+            background-color: #222254;
+            color: white;
         }
     }
 }
