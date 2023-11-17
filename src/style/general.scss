@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 // debug
@@ -19,10 +20,8 @@ img{
     max-width: 100%;
 }
 
-.debug{
-    border: 1px solid black;
-    min-height: 100px;
-}
+
+
 
 // container 
 .container{
@@ -41,6 +40,7 @@ img{
     background-color: #20AD96;
     color: white;
     border: none;
+    cursor: pointer;
     
 }
 
@@ -51,8 +51,16 @@ img{
     
 }
 
-.col-4{
+// .col-4{
     
-    border: 1px solid black;
-    flex-basis: (100% / 12 * 3);
+//     flex-basis: calc(100% / 12 * 3);
+// }
+
+//font 
+.font-green{
+    color: #20AD96;
+}
+
+.font-size-green{
+    font-weight: 100;
 }

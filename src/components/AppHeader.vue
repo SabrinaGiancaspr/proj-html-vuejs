@@ -11,7 +11,6 @@ export default {
       youtubeImg: "icon-youtube-play.png",
       personLeft: "/home-6-hero-left-person-244x300.png",
       personRight: "/home-6-hero-right-person-195x300.png",
-
     }
   }
 }
@@ -42,7 +41,7 @@ export default {
         </ul>
       </nav>
     </div>
-    <!-- title  -->
+    <!-- hero  -->
     <section class="container">
       <div class="intro">
         <h1 class="title">Learn At Your Own Pace!</h1>
@@ -68,73 +67,73 @@ export default {
 .header {
   background-color: $header-color;
   padding-top: 15px;
-  justify-content: center;
   color: white;
-}
+  position: relative;
 
-.navbar {
-  background-color: $header-color;
-  display: flex;
-  width: 1000px;
-  justify-content: center;
-
-  .logo-nav {
+  .navbar {
+    background-color: $header-color;
+    display: flex;
+    width: 1000px;
     justify-content: center;
-    align-items: center;
-    display: flex;
-    margin-right: 100px;
 
-    .logo {
-      max-width: 120px;
-      height: auto;
-    }
-  }
-
-
-  .nav-links {
-    display: flex;
-    gap: 25px;
-    align-items: center;
-    position: relative;
-
-    .shop {
-      position: relative;
-    }
-
-    .cart-badge {
-      position: absolute;
-      top: -14px;
-      right: -8px;
-      background-color: white;
-      color: black;
-      border-radius: 50%;
-      font-weight: bold;
-      aspect-ratio: 1;
-      width: 15px;
-      display: flex;
+    .logo-nav {
       justify-content: center;
       align-items: center;
-      font-size: 14px;
-    }
+      display: flex;
+      margin-right: 100px;
 
-    .angle-down {
-      font-size: 12px;
-    }
-
-    .search-bar {
-      position: relative;
-
-      .input-with-icon {
-        padding: 10px;
-        border-radius: 20px;
+      .logo {
+        max-width: 120px;
+        height: auto;
       }
 
-      .input-icon {
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      position: relative;
+
+      .shop {
+        position: relative;
+      }
+
+      .cart-badge {
         position: absolute;
-        right: 10px;
+        top: -14px;
+        right: -8px;
+        background-color: white;
         color: black;
-        top: 10px;
-        color: #20AD96;
+        border-radius: 50%;
+        font-weight: bold;
+        aspect-ratio: 1;
+        width: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+      }
+
+      .angle-down {
+        font-size: 12px;
+      }
+
+      .search-bar {
+        position: relative;
+
+        .input-with-icon {
+          padding: 10px;
+          border-radius: 20px;
+        }
+
+        .input-icon {
+          position: absolute;
+          right: 10px;
+          color: black;
+          top: 10px;
+          color: #20AD96;
+        }
       }
     }
   }

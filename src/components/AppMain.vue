@@ -34,7 +34,9 @@ export default {
                     image: "/course-02-480x298.jpg",
                     price: "$40.00",
                     description: "Learning to Write as a Professional Author",
+                    iconLessons: 'fa-regular fa-file',
                     lessons: 20,
+                    iconStudents: 'fa-solid fa-users',
                     students: 50
                 },
 
@@ -42,35 +44,45 @@ export default {
                     image: "/stock-full-hd-03-480x298.jpg",
                     price: 'Free',
                     description: 'Customer-centric',
+                    iconLessons: 'fa-regular fa-file',
                     lessons: 24,
+                    iconStudents: 'fa-solid fa-users',
                     students: 769
                 },
                 {
                     image: "/stock-full-hd-04-480x298.jpg",
-                    price: '19.00',
+                    price: '$19.00',
                     description: 'Open Programming Courses for Everyone: Python',
+                    iconLessons: 'fa-regular fa-file',
                     lessons: 17,
+                    iconStudents: 'fa-solid fa-users',
                     students: 62
                 },
                 {
                     image: "/stock-full-hd-06-480x298.jpg",
-                    price: "26.00",
+                    price: "$26.00",
                     description: "Accademic Listening and Note taking",
+                    iconLessons: 'fa-regular fa-file',
                     lessons: 14,
+                    iconStudents: 'fa-solid fa-users',
                     students: 67
                 },
                 {
                     image: "/course-featured-image-01-480x298.jpg",
-                    price: "39.00",
+                    price: "$39.00",
                     description: "Master jQuery in a Short Period of Time",
+                    iconLessons: 'fa-regular fa-file',
                     lessons: 6,
+                    iconStudents: 'fa-solid fa-users',
                     students: 51
                 },
                 {
                     image: "/stock-full-hd-05-480x298.jpg",
-                    price: "59.00",
+                    price: "$59.00",
                     description: "Introduction to Javascript for Beginners",
+                    iconLessons: 'fa-regular fa-file',
                     lessons: 14,
+                    iconStudents: 'fa-solid fa-users',
                     students: 76
                 }
             ],
@@ -80,26 +92,32 @@ export default {
             artists: [
                 {
                     id: 1,
-                    name: 'Artist ',
+                    name: 'ARTIST ',
                     image: '/artist-blog-03-480x325.jpeg',
                     description: 'Brush Strokes Energize Trees in Paintings',
+                    dateIcon: 'fa-regular fa-calendar',
                     date: 'May 15, 2020',
+                    views: 'fa-regular fa-eye',
                     views: 688
                 },
                 {
                     id: 2,
-                    name: 'Artist',
+                    name: 'ARTIST',
                     image: '/artist-blog-01-480x325.jpg',
                     description: 'Pocket-Sized Notebooks Hold Miniature Paintings',
+                    dateIcon: 'fa-regular fa-calendar',
                     date: 'May 15, 2020',
+                    views: 'fa-regular fa-eye',
                     views: 603
                 },
                 {
                     id: 3,
-                    name: 'Artist',
+                    name: 'ARTIST',
                     image: '/artist-blog-02-480x325.jpg',
                     description: 'Connection Between Self-Portraits and Identity',
+                    dateIcon: 'fa-regular fa-calendar',
                     date: 'May 15, 2020',
+                    views: 'fa-regular fa-eye',
                     views: 300
                 },
             ],
@@ -131,43 +149,53 @@ export default {
 </script>
 
 <template>
-    <main class="container main">
-        <section class="services-section">
-            <h1 class="title">Let Passion and determination be the guide along the way and develop at your own pace that's
-                comfortable</h1>
-            <p class="name">FANNIE MORENO</p>
-            <p class="company">/Founder & CEO</p>
-            <div class="row-main">
-                <div class="col-4" v-for="(card, index) in cardsData" :key="index">
-                    <div class="card">
-                        <p class="numbers">{{ card.numbers }}</p>
-                        <p class="description">{{ card.description }}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card-sections">
+    <main class="main">
+        <div class="container">
+            <section class="number-section">
+                <h1 class="title">Let passion and determination be the guide along the way and develop at your own pace that's comfortable</h1>
+                <p class="name">FANNIE MORENO</p>
+                <p class="company">/Founder & CEO</p>
+
+                <!--numbers sessions/ rate satisfaction-->
+                <div class="row-main">
+                    <div class="col-4" v-for="(card, index) in cardsData" :key="index">
+                        <div class="card">
+                            <p class="numbers">{{ card.numbers }}</p>
+                            <p class="description">{{ card.description }}</p>
+                        </div><!--card-->
+                    </div><!--col-->
+                </div><!--row-->
+            </section>
+        </div> <!--container-->
+
+        <!--cards courses services we can provide-->
+        <div class="card-sections">
+            <div class="container">
+                <!--2 cards up-->
                 <div class="first-cards">
                     <div class="card-container" v-for="(card, cardIndex) in cardSections[0]" :key="cardIndex">
                         <div class="card">
-                            <img :src="card.image" :alt="`Image ${cardIndex}`">
+                            <img :class="cardIndex === 0 ? 'invert' : '' " :src="card.image" :alt="`Image ${cardIndex}`">
                             <h3>{{ card.title }}</h3>
                             <p>{{ card.description }}</p>
-
                         </div>
                     </div>
                 </div>
+                <!--2 cards down-->
                 <div class="second-cards" style="margin-top: 40px;">
                     <div class="card-container" v-for="(card, cardIndex) in cardSections[1]" :key="cardIndex">
                         <div class="card">
-                            <img :src="card.image" :alt="`Image ${cardIndex}`">
+                            <img :class="cardIndex === 0 ? 'invert' : '' " :src="card.image" :alt="`Image ${cardIndex}`">
                             <h3>{{ card.title }}</h3>
                             <p>{{ card.description }}</p>
                         </div>
                     </div>
                 </div>
+
+                <!--paragraph services we can provide get started-->
                 <div class="get-started">
                     <p>TOGETHER WE CAN CREATE</p>
-                    <h1>Service We <span>Can Provide</span> For My Clients.</h1>
+                    <h1 class="title-serviece">Service We <span class="font-green">Can Provide</span> For My Clients.</h1>
                     <ul class="services">
                         <li v-for="(item, index) in serviceList" :key="index">
                             <font-awesome-icon class="check" icon="fas fa-check" />
@@ -176,37 +204,57 @@ export default {
                     </ul>
                     <button class="btn btn-main"> Get started for free</button>
                 </div>
-            </div>
+            </div><!--containet-->
+        </div><!--card section-->
+
+        <!--latest courses-->
+        <section class="section-main">
+            <div class="container">
+                <div class="latest-courses">
+                    <div class="title-section">
+                        <p>CHOOSE A COURSE TO GET STARTED</p>
+                        <h1 class="latest-course-title">Latest Featured <span
+                                class="font-green font-size-green">Courses</span></h1>
+                    </div>
+                    <!--card courses section-->
+                    <div class="course-cards">
+                        <div class="row">
+                            <div class="card" v-for="(course, index) in courses" :key="index">
+                                <div class="profile-picture">
+                                    <img :src="course.image" :alt="`Course ${index + 1}`">
+                                </div>
+                                <div class="price-description">
+
+                                    <div class="price font-green">{{ course.price }}</div>
+                                    <p class="description">{{ course.description }}</p>
+                                    <div class="additional-info">
+                                        <div class="lessons">
+                                            <font-awesome-icon :icon="course.iconLessons" />
+                                            <p class="info">{{ course.lessons }} lessons</p>
+                                        </div>
+                                        <div class="students">
+                                            <font-awesome-icon :icon="course.iconStudents" />
+                                            <p class="info">{{ course.students }} students</p>
+                                        </div>
+
+                                    </div>
+                                </div><!--price description-->
+                            </div><!--card-->
+                        </div><!--row-->
+                    </div><!--course cards-->
+                    <!--button-->
+                    <div class="btn-section">
+                        <button class="btn btn-courses">View all courses
+                            <font-awesome-icon icon="fa-solid fa-arrow-right" />
+                        </button>
+                    </div>
+                </div><!--latest courses-->
+            </div><!--container-->
         </section>
 
-        <section class="courses">
-            <div class="title-section">
-                <p>CHOOSE A COURSE TO GET STARTED</p>
-                <h1 class="latest-course-title">Latest Featured <span>Courses</span></h1>
-            </div>
-            <div class="course-cards">
-                <div class="row">
-                    <div class="card" v-for="(course, index) in courses" :key="index">
-                        <!-- Round profile picture -->
-                        <div class="profile-picture">
-                            <img :src="course.image" :alt="`Course ${index + 1}`">
-                        </div>
-                        <!-- Price and Description -->
-                        <div class="price-description">
-                            <div class="price">{{ course.price }}</div>
-                            <p class="description">{{ course.description }}</p>
-                            <div class="additional-info">
-                                <p class="info">{{ course.lessons }} lessons</p>
-                                <p class="info">{{ course.students }} students</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="btn btn-courses">View all courses <font-awesome-icon icon="fa-solid fa-arrow-right" /></button>
-        </section>
+        <!--about MaxCoach-->
         <section class="about-maxcoach">
-            <h1 class="title-about">Why people talk about MaxCoach?</h1>
+            <h1 class="title-about">Why people talk about <span class="font-green">MaxCoach?</span></h1>
             <div class="card-quote">
                 <div class="img">
                     <img class="freelancer-img" src="/testimonial-avata-02.jpg" alt="">
@@ -218,45 +266,57 @@ export default {
                     <p class="freelancer">/Freelancer</p>
                 </div>
             </div>
-            <section class="companies">
+            <div class="companies">
                 <div class="company-logo" v-for="(company, index) in companies" :key="index">
                     <img :src="company" :alt="'Company ' + (index + 1)">
                 </div>
-            </section>
+            </div>
         </section>
 
+        <!--blog-->
         <section class="blog">
             <p>ENJOY READING ON MAXCOACH</p>
-            <h1 class="title-blog">Latest on <span>Our Blogs</span></h1>
+            <h1 class="title-blog">Latest on <span class="font-green">Our Blogs</span></h1>
             <div class="row">
                 <div class="card-blog" v-for="artist in artists" :key="artist.id">
                     <img class="img-blog" :src="artist.image" :alt="artist.name">
                     <p>{{ artist.name }}</p>
                     <div class="description">{{ artist.description }}</div>
                     <div class="additional-info">
+                        <font-awesome-icon icon="fa-regular fa-calendar" />
                         <p class="info">{{ artist.date }}</p>
+                        <font-awesome-icon icon="fa-regular fa-eye" />
                         <p class="info">{{ artist.views }} views</p>
                     </div>
                 </div>
             </div>
         </section>
-        <section>
-            <p>wanna</p>
-            <h1>Glad to Help you</h1>
-            <div class="learning">
-                <div class="card-lerning" v-for="learn in learning">
-                    <font-awesome-icon class="flag" :icon="learn.icon" />
-                    <div class="title-learn">{{ learn.title }}</div>
-                    <p class="description-learn">{{ learn.description }}</p>
+
+        <!--glad to help you-->
+        <section class="transform-life">
+            <div class="title-help-section">
+                <p>WANNA TRANSFORM YOUR LIFE?</p>
+                <h1 class="title-help">Glad to <span class="font-green">Help you</span> Learn</h1>
+            </div>
+            <div class="container">
+                <div class="learning">
+                    <div class="card-lerning" v-for="learn in learning">
+                        <font-awesome-icon class="flag" :icon="learn.icon" />
+                        <div class="title-learn">{{ learn.title }}</div>
+                        <p class="description-learn">{{ learn.description }}</p>
+                    </div>
                 </div>
             </div>
+            <!--img-->
             <figure class="big-img">
-                <img  src="/home-6-services-image.png" alt="">
+                <img class="img-learning" src="/home-6-services-image.png" alt="">
             </figure>
         </section>
+
+        <!--start today-->
         <section class="start">
-            <p>Start today fro getting <span>Online Certification</span></p>
-            <h1>You can be your own guiding star with our help!</h1>
+            <p class="title-start">Start today fro getting <span class="font-green font-size-green">Online Certification</span></p>
+            <h1 class="subtitle">You can be your own guiding star with our help!</h1>
             <button class="btn">Get started now</button>
         </section>
     </main>
@@ -270,87 +330,106 @@ export default {
     display: flex;
     flex-direction: column;
 
-    .services-section {
+    //number satisfaction
+
+    .number-section {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 20px;
-    }
 
-    .title {
-        width: 500px;
-        margin-top: 200px;
-        text-align: center;
-        display: flex;
-    }
+        .title {
+            width: 515px;
+            margin-top: 200px;
+            text-align: center;
+            line-height: 30px;
+        }
 
-    .name {
-        font-weight: bold;
-        display: flex;
-        justify-content: center;
-    }
-
-    .company {
-        color: #696969;
-        display: flex;
-        justify-content: center;
-    }
-
-    .row-main {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        margin-top: 100px;
-
-        .card {
-            width: 200px;
+        .name {
+            font-weight: bold;
             display: flex;
-            gap: 10px;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+        }
+
+        .company {
+            color: #696969;
+            display: flex;
+            justify-content: center;
+        }
+
+        .row-main {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 100px;
+
+            .card {
+                width: 200px;
+                display: flex;
+                gap: 10px;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
 
 
-            .numbers {
-                font-size: 35px;
-                color: #20AD96;
-                font-weight: bold;
-            }
+                .numbers {
+                    font-size: 35px;
+                    color: #20AD96;
+                    font-weight: bold;
+                }
 
-            .description {
-                font-size: 13px;
-                font-weight: bold;
+                .description {
+                    font-size: 13px;
+                    font-weight: bold;
+                }
             }
         }
     }
 
-
+    //card services we can provide
     .card-sections {
         display: flex;
         justify-content: space-between;
         margin-top: 100px;
-        gap: 20px;
 
+        .card{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .invert{
+            order: 999;
+            width: 170px;
+        }
+        }
 
         .first-cards,
         .second-cards {
             display: flex;
             flex-direction: column;
             gap: 20px;
+            padding: 10px;
         }
 
         .card-container {
-            border: 1px solid black;
             width: 210px;
             display: flex;
             flex-direction: column;
-            height: 300px;
+            padding: 10px;
+            height: 352px;
         }
     }
 
     .get-started {
         margin: 100px 0 0 50px;
         width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .title-serviece {
+            width: 300px;
+        }
 
         .services {
             display: flex;
@@ -366,12 +445,13 @@ export default {
 
         .btn-main {
             margin-top: 40px;
+            width: 220px;
         }
     }
 
-    .courses {
+    //latest courses
+    .section-main {
         width: 100%;
-        border: 1px solid black;
         margin-top: 60px;
         display: flex;
         align-items: center;
@@ -397,13 +477,21 @@ export default {
             flex-direction: column;
             gap: 20px;
             margin-bottom: 50px;
+            align-items: center;
+            margin-top: 60px;
+
+            .latest-course-title {
+                font-size: 30px;
+            }
         }
 
         .course-cards {
             display: flex;
-            border: 1px solid black;
             margin-bottom: 20px;
 
+            .profile-picture{
+                flex-shrink: 0;
+            }
             .profile-picture img {
                 width: 130px;
                 height: 130px;
@@ -415,18 +503,24 @@ export default {
             .price {
                 font-size: 24px;
                 font-weight: bold;
-                color: #333;
                 margin-bottom: 8px;
             }
 
             .description {
                 font-size: 18px;
-                color: #555;
+                font-weight: 800;
                 margin-bottom: 15px;
             }
 
             .additional-info {
                 display: flex;
+                gap: 15px;
+
+                .lessons, .students{
+                    display: flex;
+                    gap: 5px;
+                }
+
             }
 
             .info {
@@ -435,109 +529,163 @@ export default {
             }
         }
 
-        .btn-courses {
+        .btn-section {
             display: flex;
             gap: 10px;
-            align-items: center;
+            justify-content: center;
+            margin-bottom: 60px;
         }
     }
-}
 
-.about-maxcoach {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-top: 40px;
-}
+    //about maxcoach
+    .about-maxcoach {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 40px;
 
-.card-quote {
-    display: flex;
-    gap: 50px;
-    margin-top: 40px;
+        .title-about{
+            font-size: 35px;
+        }
+
+        .card-quote {
+            display: flex;
+            gap: 50px;
+            margin-top: 40px;
 
 
-    .freelancer-img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        display: block;
-        margin: 0 auto 10px;
+            .freelancer-img {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                display: block;
+                margin: 0 auto 10px;
+            }
+
+            .desc {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .quote {
+                font-size: 20px;
+                margin-top: 10px;
+                width: 460px;
+            }
+
+            .name-freelancer{
+                font-weight: bold;
+            }
+        }
     }
 
-    .desc {
+    //companyes cards
+    .companies {
+        display: flex;
+        gap: 50px;
+        margin-top: 60px;
+        align-items: center;
+    }
+
+    //blog section
+    .blog {
+        margin-top: 100px;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        align-items: center;
+        background-color: #F5F7FA;
+        padding: 60px;
+
+        .title-blog {
+            margin-bottom: 40px;
+            font-size: 35px;
+            margin-top: 20px;
+        }
+
+        .card-blog {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 320px;
+
+            .description{
+                font-weight: bold;
+            }
+            .img-blog {
+                width: 300px;
+                margin-right: 30px;
+
+            }
+        }
+        .additional-info{
+            display: flex;
+            gap: 15px;
+        }
     }
 
-    .quote {
-        font-size: 20px;
-        margin-top: 10px;
-        width: 300px;
+
+    //transform life section
+    .transform-life {
+        padding-top: 60px;
+        background: linear-gradient(to bottom, #ffffff, #F5F7FA);
+
+        .title-help-section {
+            text-align: center;
+
+            .title-help{
+                margin-top: 10px;
+                font-size: 40px;
+            }
+        }
+
+        .learning {
+            margin-top: 100px;
+            display: flex;
+            gap: 10px;
+
+            .flag {
+                font-size: 30px;
+            }
+
+            .title-learn {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                font-weight: bold;
+            }
+        }
     }
-}
-
-.companies {
-    display: flex;
-    gap: 50px;
-    margin-top: 60px;
-    align-items: center;
-}
 
 
-.blog {
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    .big-img {
+        margin-top: 60px;
+        display: flex;
+        justify-content: center;
 
-    .title-blog {
-        margin-bottom: 40px;
+        .img-learning {
+            margin-bottom: -32px;
+
+        }
     }
-}
 
-.card-blog {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 320px;
-}
+    //start now section
+    .start {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
 
+        .title-start{
+            font-weight: bold;
+            font-size: 20px;
+        }
 
-
-.img-blog {
-    width: 300px;
-    margin-right: 30px;
-
-}
-
-
-.learning {
-    margin-top: 100px;
-    display: flex;
-    gap: 10px;
-}
-
-.flag {
-    font-size: 30px;
-}
-
-.title-learn {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.big-img{
-    margin-top: 60px;
-}
-
-.start{
-    margin-top: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+        .subtitle{
+            font-size: 30px;
+        }
+    }
 }
 </style>

@@ -2,10 +2,12 @@
 import { store } from "./store"; 
 import AppHeader from "./components/AppHeader.vue"
 import AppMain from "./components/AppMain.vue"
+import AppFooter from "./components/AppFooter.vue"
 export default{
   components: {
     AppHeader,
-    AppMain
+    AppMain,
+    AppFooter
   },
   data(){
     return{
@@ -13,6 +15,15 @@ export default{
       store: store,
     }
     
+  },
+
+  methods:{
+    pageTop(){
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth' 
+      })
+    }
   }
 }
  
@@ -21,6 +32,7 @@ export default{
 <template>
     <AppHeader :links="links" />
     <AppMain />
+    <AppFooter @scrollUp="pageTop()" />
 </template>
 
 <style lang="scss">
