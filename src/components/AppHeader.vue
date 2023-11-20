@@ -25,7 +25,7 @@ export default {
           <img class="logo" :src="logo" alt="">
         </figure>
         <ul class="nav-links">
-          <li v-for="(link, index) in links" :key="index">
+          <li v-for="link in links" >
             <a href="#">{{ link }} <font-awesome-icon class="angle-down" icon="fas fa-angle-down" /></a>
           </li>
           <li class="shop">

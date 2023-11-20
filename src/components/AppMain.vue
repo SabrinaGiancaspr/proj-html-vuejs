@@ -158,7 +158,7 @@ export default {
 
                 <!--numbers sessions/ rate satisfaction-->
                 <div class="row-main">
-                    <div class="col-4" v-for="(card, index) in cardsData" :key="index">
+                    <div class="col-4" v-for="card in cardsData" >
                         <div class="card">
                             <p class="numbers">{{ card.numbers }}</p>
                             <p class="description">{{ card.description }}</p>
@@ -173,7 +173,7 @@ export default {
             <div class="container">
                 <!--2 cards up-->
                 <div class="first-cards">
-                    <div class="card-container" v-for="(card, cardIndex) in cardSections[0]" :key="cardIndex">
+                    <div class="card-container" v-for=" (card, cardIndex) in cardSections[0]" :key="cardIndex">
                         <div class="card">
                             <img :class="cardIndex === 0 ? 'invert' : '' " :src="card.image" :alt="`Image ${cardIndex}`">
                             <h3>{{ card.title }}</h3>
@@ -182,7 +182,7 @@ export default {
                     </div>
                 </div>
                 <!--2 cards down-->
-                <div class="second-cards" style="margin-top: 40px;">
+                <div class="second-cards" style="margin-top: 80px;">
                     <div class="card-container" v-for="(card, cardIndex) in cardSections[1]" :key="cardIndex">
                         <div class="card">
                             <img :class="cardIndex === 0 ? 'invert' : '' " :src="card.image" :alt="`Image ${cardIndex}`">
@@ -409,6 +409,7 @@ export default {
             flex-direction: column;
             gap: 20px;
             padding: 10px;
+
         }
 
         .card-container {
@@ -416,7 +417,7 @@ export default {
             display: flex;
             flex-direction: column;
             padding: 10px;
-            height: 352px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
         .btn-main:hover{
             background-color: #222254;
